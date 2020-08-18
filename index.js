@@ -1,6 +1,6 @@
 const core = require('@actions/core');
 const github = require('@actions/github');
-const words = require('./src/words');
+const words = require('./words');
 
 async function run() {
   try {
