@@ -23,7 +23,7 @@ async function run() {
             await octokit.issues.createComment({
               ...github.context.repo,
               issue_number: issue.number,
-              body: `[Random Gif related to ${label.name}](${randomGif})`
+              body: `![Random Gif related to ${label.name}](${randomGif})`
             });
           }
         }
