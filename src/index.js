@@ -9,8 +9,8 @@ async function run() {
 
     if (github.context.eventName == 'issues') {
       const issue = github.context.payload.issue;
-      const newTitle = checkString(issue.title);
-      const newBody = checkString(issue.body);
+      let newTitle = checkString(issue.title);
+      let newBody = checkString(issue.body);
 
       if (issue.title !== newTitle || issue.body != newBody) {
         newBody += '🍤 If you\'re trying to curse, you can\'t here. Your issue was updated by The Good Place Action.'
