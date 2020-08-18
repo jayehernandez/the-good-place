@@ -2,7 +2,7 @@ const core = require('@actions/core');
 const github = require('@actions/github');
 const words = require('./words');
 
-const note = '\n\n_Hi there! If you\'re trying to curse, you can\'t here at The Good Place. Have a great day! - Janet_'
+const note = '\n\n![Janet Reminder](https://github.com/jayehernandez/the-good-place/blob/master/images/curse.png?raw=true)'
 
 async function run() {
   try {
