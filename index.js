@@ -15,7 +15,7 @@ async function run() {
       if (github.context.payload.action === 'labeled') {
         console.log('here')
         console.log(github.context.payload.issue.labels.count)
-        if (github.context.payload.issue.labels.count === 1) {
+        if (github.context.payload.issue.labels.length === 1) {
           console.log(github.context.payload.label.name)
           let labelName = github.context.payload.label.name
           console.log(gifs[labelName]);
