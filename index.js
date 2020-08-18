@@ -2,6 +2,8 @@ const core = require('@actions/core');
 const github = require('@actions/github');
 const words = require('./words');
 
+const note = '\n\n_Hi there! If you\'re trying to curse, you can\'t here at The Good Place. Have a great day! - Janet_'
+
 async function run() {
   try {
     const token = core.getInput('repo-token');
@@ -21,7 +23,7 @@ async function run() {
       console.log(newBody);
 
       if (issue.title !== newTitle || issue.body != newBody) {
-        newBody += '\n\n🍤 If you\'re trying to curse, you can\'t here. We here at The Good Place updated your issue accordingly. Have a great day!'
+        if (!newBody.includes(note)) newBody += issueNote;
 
         await octokit.issues.update({
           ...github.context.repo,
