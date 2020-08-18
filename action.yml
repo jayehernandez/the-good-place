@@ -1,0 +1,9 @@
+name: 'The Good Place Action'
+description: 'Welcome! Everything is Fine.'
+inputs:
+  repo-token:
+    description: 'Secret Github Token'
+    required: true
+runs:
+  using: 'node12'
+  main: 'src/index.js'
