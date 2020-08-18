@@ -9,10 +9,11 @@ async function run() {
   try {
     const token = core.getInput('repo-token');
     const octokit = github.getOctokit(token);
+    console.log(github.context.eventName)
 
     if (github.context.eventName === 'issues') {
       await checkIssue(github, octokit);
-      console.log(github.event.issue.labels)
+      console.log(github.context.payload.label)
     } else if (github.context.eventName === 'issue_comment') {
       await checkIssueComment(github, octokit);
     } else if (github.context.eventName === 'pull_request') {

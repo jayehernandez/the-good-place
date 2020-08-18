@@ -3,6 +3,7 @@ on:
     types:
       - opened
       - edited
+      - labeled
   issue_comment:
     types:
       - created
