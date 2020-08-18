@@ -13,12 +13,19 @@ async function run() {
 
     if (github.context.eventName === 'issues') {
       if (github.context.payload.action === 'labeled') {
-        console.log('here')
-        console.log(github.context.payload.issue.labels.count)
-        if (github.context.payload.issue.labels.length === 1) {
-          console.log(github.context.payload.label.name)
-          let labelName = github.context.payload.label.name
-          console.log(gifs[labelName]);
+        let { label, issue } = github.context.payload;
+        if (issue.labels.length === 1) {
+          let gifsOfLabel = gifs[label.name];
+
+          if (gifsOfLabel.length > 0) {
+            const randomGif = gifsOfLabel[Math.floor(Math.random() * gifsOfLabel.length)];
+
+            await octokit.issues.createComment({
+              ...github.context.repo,
+              issue_number: issue.number,
+              body: `[Random Gif related to ${label.name}](${randomGif})`
+            });
+          }
         }
       } else {
         await checkIssue(github, octokit);
