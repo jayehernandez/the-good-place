@@ -54,7 +54,6 @@ async function checkIssueComment(github, octokit) {
   }
 }
 
-
 async function checkPullRequest(github, octokit) {
   let pull_request = github.context.payload.pull_request;
   let newTitle = checkString(pull_request.title);
@@ -63,7 +62,7 @@ async function checkPullRequest(github, octokit) {
   if (pull_request.title !== newTitle || pull_request.body != newBody) {
     if (!newBody.includes(imageUrl)) newBody += note;
 
-    await octokit.pull_requests.update({
+    await octokit.pulls.update({
       ...github.context.repo,
       pull_number: pull_request.number,
       title: newTitle,
