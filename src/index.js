@@ -11,9 +11,11 @@ async function run() {
       const issue = github.context.payload.issue;
       let newTitle = checkString(issue.title);
       let newBody = checkString(issue.body);
+      console.log(newTitle);
+      console.log(newBody);
 
       if (issue.title !== newTitle || issue.body != newBody) {
-        newBody += '🍤 If you\'re trying to curse, you can\'t here. Your issue was updated by The Good Place Action.'
+        newBody += '\n🍤 If you\'re trying to curse, you can\'t here. Your issue was updated by The Good Place Action.'
 
         await octokit.issues.update({
           ...github.context.repo,
