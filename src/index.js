@@ -1,6 +1,6 @@
 const core = require('@actions/core');
 const github = require('@actions/github');
-const words = require('./words');
+const words = require('./src/words');
 
 async function run() {
   try {
@@ -21,7 +21,7 @@ async function run() {
       console.log(newBody);
 
       if (issue.title !== newTitle || issue.body != newBody) {
-        newBody += '\n🍤 If you\'re trying to curse, you can\'t here. Your issue was updated by The Good Place Action.'
+        newBody += '\n\n🍤 If you\'re trying to curse, you can\'t here. We here at The Good Place updated your issue accordingly. Have a great day!'
 
         await octokit.issues.update({
           ...github.context.repo,
