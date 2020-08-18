@@ -11,7 +11,7 @@ async function run() {
     const octokit = github.getOctokit(token);
 
     if (github.context.eventName === 'issues') {
-      checkIssue(github, octokit);
+      await checkIssue(github, octokit);
     } else if (github.context.eventName === 'issue_comment') {
       let comment = github.context.payload.comment;
       let newBody = checkString(issue.body);
@@ -31,8 +31,7 @@ async function run() {
   }
 }
 
-
-function checkIssue(github, octokit) {
+async function checkIssue(github, octokit) {
   let issue = github.context.payload.issue;
   let newTitle = checkString(issue.title);
   let newBody = checkString(issue.body);
