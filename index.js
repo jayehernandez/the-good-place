@@ -23,7 +23,7 @@ async function run() {
       console.log(newBody);
 
       if (issue.title !== newTitle || issue.body != newBody) {
-        if (!newBody.includes(note)) newBody += issueNote;
+        if (!newBody.includes(note)) newBody += note;
 
         await octokit.issues.update({
           ...github.context.repo,
