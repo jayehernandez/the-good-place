@@ -4,6 +4,5 @@ module.exports = {
   bitch: 'bench',
   ass: 'ash',
   cock: 'cork',
-  dick: 'deck',
-  asshole: 'ash-hole'
+  dick: 'deck'
 }
