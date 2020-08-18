@@ -10,10 +10,11 @@ async function run() {
   try {
     const token = core.getInput('repo-token');
     const octokit = github.getOctokit(token);
-    console.log(github.context.eventName)
 
     if (github.context.eventName === 'issues') {
       if (github.context.payload.action === 'labeled') {
+        console.log('here')
+        console.log(github.context.payload.issue.labels.count)
         if (github.context.payload.issue.labels.count === 1) {
           console.log(github.context.payload.label.name)
           let labelName = github.context.payload.label.name
