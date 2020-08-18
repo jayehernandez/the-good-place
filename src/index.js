@@ -7,10 +7,16 @@ async function run() {
     const token = core.getInput('repo-token');
     const octokit = github.getOctokit(token);
 
+    console.log(words)
+
     if (github.context.eventName == 'issues') {
-      const issue = github.context.payload.issue;
+      let issue = github.context.payload.issue;
+
+      console.log(issue.title);
       let newTitle = checkString(issue.title);
       let newBody = checkString(issue.body);
+
+
       console.log(newTitle);
       console.log(newBody);
 
