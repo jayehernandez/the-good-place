@@ -4,7 +4,7 @@ const words = require('./words');
 const gifs = require('./gifs');
 
 const imageUrl = 'https://github.com/jayehernandez/the-good-place/blob/master/images/curse.png?raw=true';
-const note = `\n\n![Janet Reminder](${imageUrl})`;
+const note = `\n\n![Janet's Reminder on cursing](${imageUrl})`;
 
 async function run() {
   try {
@@ -13,20 +13,7 @@ async function run() {
 
     if (github.context.eventName === 'issues') {
       if (github.context.payload.action === 'labeled') {
-        let { label, issue } = github.context.payload;
-        if (issue.labels.length === 1) {
-          let gifsOfLabel = gifs[label.name];
-
-          if (gifsOfLabel.length > 0) {
-            const randomGif = gifsOfLabel[Math.floor(Math.random() * gifsOfLabel.length)];
-
-            await octokit.issues.createComment({
-              ...github.context.repo,
-              issue_number: issue.number,
-              body: `![Random Gif related to ${label.name}](${randomGif})`
-            });
-          }
-        }
+        await checkIssueLabel(github, octokit);
       } else {
         await checkIssue(github, octokit);
       }
@@ -56,6 +43,25 @@ async function checkIssue(github, octokit) {
       title: newTitle,
       body: newBody
     });
+  }
+}
+
+async function checkIssueLabel(github, octokit) {
+  let { label, issue } = github.context.payload;
+
+  // To avoid spam for issues with multiple labels
+  if (issue.labels.length === 1) {
+    let gifsOfLabel = gifs[label.name];
+
+    if (gifsOfLabel.length > 0) {
+      const randomGif = gifsOfLabel[Math.floor(Math.random() * gifsOfLabel.length)];
+
+      await octokit.issues.createComment({
+        ...github.context.repo,
+        issue_number: issue.number,
+        body: `![Random GIF related to ${label.name}](${randomGif})`
+      });
+    }
   }
 }
 
