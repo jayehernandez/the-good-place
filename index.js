@@ -12,9 +12,11 @@ async function run() {
     console.log(github.context.eventName)
 
     if (github.context.eventName === 'issues') {
+      console.log(github.context.payload);
       await checkIssue(github, octokit);
-      console.log(github.context.payload.label)
-      console.log(github.context.payload.issue)
+
+      console.log(github.context.payload.label.name)
+      console.log(github.context.payload.issue.labels.count === 1)
     } else if (github.context.eventName === 'issue_comment') {
       await checkIssueComment(github, octokit);
     } else if (github.context.eventName === 'pull_request') {
