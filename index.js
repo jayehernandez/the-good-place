@@ -1,6 +1,7 @@
 const core = require('@actions/core');
 const github = require('@actions/github');
 const words = require('./words');
+const gifs = require('./gifs');
 
 const imageUrl = 'https://github.com/jayehernandez/the-good-place/blob/master/images/curse.png?raw=true';
 const note = `\n\n![Janet Reminder](${imageUrl})`;
@@ -12,11 +13,15 @@ async function run() {
     console.log(github.context.eventName)
 
     if (github.context.eventName === 'issues') {
-      console.log(github.context.payload);
-      await checkIssue(github, octokit);
-
-      console.log(github.context.payload.label.name)
-      console.log(github.context.payload.issue.labels.count === 1)
+      if (github.context.payload.action === 'labeled') {
+        if (github.context.payload.issue.labels.count === 1) {
+          console.log(github.context.payload.label.name)
+          let labelName = github.context.payload.label.name
+          console.log(gifs[labelName]);
+        }
+      } else {
+        await checkIssue(github, octokit);
+      }
     } else if (github.context.eventName === 'issue_comment') {
       await checkIssueComment(github, octokit);
     } else if (github.context.eventName === 'pull_request') {
