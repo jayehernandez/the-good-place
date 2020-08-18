@@ -9,7 +9,7 @@ on:
       - edited
   pull_request:
     types:
-      - created
+      - opened
       - edited
   pull_request_review_comment:
     types:
