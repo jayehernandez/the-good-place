@@ -14,6 +14,8 @@ async function run() {
       await checkIssue(github, octokit);
     } else if (github.context.eventName === 'issue_comment') {
       await checkIssueComment(github, octokit);
+    } else if (github.context.eventName === 'pull_request') {
+      await checkPullRequest(github, octokit);
     }
   } catch (error) {
     core.setFailed(error.message);
@@ -47,6 +49,24 @@ async function checkIssueComment(github, octokit) {
     await octokit.issues.updateComment({
       ...github.context.repo,
       comment_id: comment.id,
+      body: newBody
+    });
+  }
+}
+
+
+async function checkPullRequest(github, octokit) {
+  let pull_request = github.context.payload.pull_request;
+  let newTitle = checkString(pull_request.title);
+  let newBody = checkString(pull_request.body);
+
+  if (pull_request.title !== newTitle || pull_request.body != newBody) {
+    if (!newBody.includes(imageUrl)) newBody += note;
+
+    await octokit.pull_requests.update({
+      ...github.context.repo,
+      pull_number: pull_request.number,
+      title: newTitle,
       body: newBody
     });
   }

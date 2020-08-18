@@ -7,6 +7,10 @@ on:
     types:
       - created
       - edited
+  pull_request:
+    types:
+      - created
+      - edited
   pull_request_review_comment:
     types:
       - created
