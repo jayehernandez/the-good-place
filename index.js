@@ -12,6 +12,7 @@ async function run() {
 
     if (github.context.eventName === 'issues') {
       await checkIssue(github, octokit);
+      console.log(github.event.issue.labels)
     } else if (github.context.eventName === 'issue_comment') {
       await checkIssueComment(github, octokit);
     } else if (github.context.eventName === 'pull_request') {
