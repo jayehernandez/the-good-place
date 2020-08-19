@@ -5571,7 +5571,7 @@ module.exports = {
   fuck: 'fork',
   shit: 'shirt',
   bitch: 'bench',
-  ass: 'ash',
+  asshole: 'ash-hole',
   cock: 'cork',
   dick: 'deck'
 }
