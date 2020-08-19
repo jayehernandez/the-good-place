@@ -50,11 +50,10 @@ async function checkIssueLabel(github, octokit) {
   let { label, issue } = github.context.payload;
 
   // To avoid spam for issues with multiple labels
-  console.log(issue)
   if (issue.labels.length === 1) {
     let gifsOfLabel = gifs[label.name];
 
-    if (gifsOfLabel.length > 0) {
+    if (gifsOfLabel && gifsOfLabel.length > 0) {
       const randomGif = gifsOfLabel[Math.floor(Math.random() * gifsOfLabel.length)];
 
       await octokit.issues.createComment({
