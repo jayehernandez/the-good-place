@@ -12,7 +12,7 @@
   </a>
 </p>
 
-> A GitHub Action that makes your repo a neighborhood in The Good Place
+> A GitHub Action that lets you be an architect of your own neighborhood (your repository) in The Good Place
 
 ## 🍤 Features
 - Replaces curse words in Issues and Pull Requests with approved words in The Good Place
