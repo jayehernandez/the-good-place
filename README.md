@@ -7,6 +7,9 @@
   <a href="https://github.com/jayehernandez/the-good-place/blob/master/LICENSE" target="_blank">
     <img alt="License: MIT" src="https://img.shields.io/github/license/jayehernandez/the-good-place" />
   </a>
+  <a href="http://hits.dwyl.com/jayehernandez/the-good-place" target="_blank">
+    <img alt="HitCount" src="http://hits.dwyl.com/jayehernandez/the-good-place.svg" />
+  </a>
   <a href="https://twitter.com/jayehernandez_" target="_blank">
     <img alt="Twitter: jayehernandez_" src="https://img.shields.io/twitter/follow/jayehernandez_.svg?style=social" />
   </a>
@@ -53,7 +56,7 @@ jobs:
 * [Octokit Rest API](https://developer.github.com/v3/libraries/)
 * GIFs from [Giphy](giphy.com)
 
-Give a ⭐️ if you think this project is cool! This is an entry to dev.to's [Github Actions Hackathon](https://dev.to/devteam/announcing-the-github-actions-hackathon-on-dev-3ljn).
+Give a ⭐️ if you think this project is cool! This is an entry to dev.to's [GitHub Actions Hackathon](https://dev.to/devteam/announcing-the-github-actions-hackathon-on-dev-3ljn).
 
 ## 📝 License
 
