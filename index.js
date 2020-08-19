@@ -50,6 +50,7 @@ async function checkIssueLabel(github, octokit) {
   let { label, issue } = github.context.payload;
 
   // To avoid spam for issues with multiple labels
+  console.log(issue)
   if (issue.labels.length === 1) {
     let gifsOfLabel = gifs[label.name];
 
