@@ -1,23 +1,14 @@
 on:
   issues:
-    types:
-      - opened
-      - edited
-      - labeled
+    types: [opened, edited, labeled]
   issue_comment:
-    types:
-      - created
-      - edited
+    types: [created, edited]
   pull_request:
-    types:
-      - opened
-      - edited
+    types: [opened, edited]
   pull_request_review_comment:
-    types:
-      - created
-      - edited
+    types: [created, edited]
 jobs:
-  the_good_place_job:
+  build:
     runs-on: ubuntu-latest
     name: 🍤 The Good Place
     steps:
