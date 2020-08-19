@@ -32,13 +32,13 @@ module.exports = {
     'https://media.giphy.com/media/3o7aCU8yh7flIPBvy0/giphy.gif', // jason another qt thing
     'https://media.giphy.com/media/mFYS4Z8K6C6Cx79SN1/giphy.gif', // chidi: oooooh
   ],
-  good_first_issue: [
+  'good first issue': [
     'https://media.giphy.com/media/Tfuwketx2PdfSgcbki/giphy.gif', // disco janet: solid
     'https://media.giphy.com/media/eH45SLazJpXjqQ2WXc/giphy.gif', // michael: it's gonna take a lot of work but the work is the fun part guys
     'https://media.giphy.com/media/xThtalkAxYnZd94uB2/giphy.gif', // michael: okay here we go
     'https://media.giphy.com/media/UUgTEncAfGQIcNmAk8/giphy.gif', // welcome, everything is fine
   ],
-  help_wanted: [
+  'help wanted': [
     'https://media.giphy.com/media/3ohs86Ey2s0UVydK6Y/giphy.gif', // tahani: let's chat, shall we?
     'https://media.giphy.com/media/xT9IgCA0oc92ufQRj2/giphy.gif', // tahani: hands on mouth
   ],
