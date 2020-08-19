@@ -23,7 +23,6 @@
 ![Feature 1 Demo](images/feature1.png)
 
 - Comments a forking accurate GIF when you first label an issue (supports GitHub's [default labels](https://docs.github.com/en/github/managing-your-work-on-github/about-labels#using-default-labels))
-![Feature 2](https://dev-to-
 
 ![Feature 2 Demo](images/feature2.png)
 
@@ -56,7 +55,9 @@ jobs:
 * [Octokit Rest API](https://developer.github.com/v3/libraries/)
 * GIFs from [Giphy](giphy.com)
 
-Give a ⭐️ if you think this project is cool! This is an entry to dev.to's [GitHub Actions Hackathon](https://dev.to/devteam/announcing-the-github-actions-hackathon-on-dev-3ljn).
+Give a ⭐️ if you think this project is cool!
+
+This is an entry to dev.to's [GitHub Actions Hackathon](https://dev.to/devteam/announcing-the-github-actions-hackathon-on-dev-3ljn). I wrote about it [here](https://dev.to/jayehernandez/the-good-place-a-github-action-365m).
 
 ## 📝 License
 
