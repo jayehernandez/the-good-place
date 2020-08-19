@@ -17,7 +17,7 @@ on:
       - created
       - edited
 jobs:
-  hello_world_job:
+  the_good_place_job:
     runs-on: ubuntu-latest
     name: 🍤 The Good Place
     steps:

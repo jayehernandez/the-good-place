@@ -1,5 +1,5 @@
 name: 'The Good Place Action'
-description: 'Welcome! Everything is Fine.'
+description: 'Makes your repo a neighborhood in The Good Place.'
 inputs:
   repo-token:
     description: 'Secret Github Token'

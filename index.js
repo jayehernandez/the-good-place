@@ -1,10 +1,10 @@
 const core = require('@actions/core');
 const github = require('@actions/github');
-const words = require('./words');
-const gifs = require('./gifs');
+const words = require('./src/words');
+const gifs = require('./src/gifs');
 
 const imageUrl = 'https://github.com/jayehernandez/the-good-place/blob/master/images/curse.png?raw=true';
-const note = `\n\n![Janet's Reminder on cursing](${imageUrl})`;
+const note = `\n\n![Janet's Reminder on Cursing](${imageUrl})`;
 
 async function run() {
   try {
