@@ -12,14 +12,14 @@
   </a>
 </p>
 
-> A GitHub Action that makes your repo a neighborhood in The Good Place
+> A GitHub Action that lets you be an architect of your own neighborhood (your repository) in The Good Place
 
 ## 🍤 Features
-- Replaces curse words with approved words in The Good Place
+- Replaces curse words in Issues and Pull Requests with approved words in The Good Place
 
 ![Feature 1 Demo](images/feature1.png)
 
-- Comments a forking accurate GIF when you first label an issue
+- Comments a forking accurate GIF when you first label an issue (supports GitHub's [default labels](https://docs.github.com/en/github/managing-your-work-on-github/about-labels#using-default-labels))
 
 ![Feature 2 Demo](images/feature2.png)
 
@@ -53,6 +53,8 @@ jobs:
 * GIFs from [Giphy](giphy.com)
 
 Give a ⭐️ if you think this project is cool!
+
+This is an entry to dev.to's [GitHub Actions Hackathon](https://dev.to/devteam/announcing-the-github-actions-hackathon-on-dev-3ljn). I wrote about it [here](https://dev.to/jayehernandez/the-good-place-a-github-action-365m).
 
 ## 📝 License
 
