@@ -42,7 +42,7 @@ jobs:
     name: The Good Place
     steps:
       - name: The Good Place Action
-        uses: jayehernandez/the-good-place@v1
+        uses: jayehernandez/the-good-place@v1.1
         with:
           repo-token: ${{ secrets.GITHUB_TOKEN }}
 ```
