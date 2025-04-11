@@ -3,7 +3,9 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "type": "module",
   "scripts": {
+    "build": "rolldown index.js --platform node --format es --file dist/index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -19,6 +21,10 @@
   "homepage": "https://github.com/jayehernandez/the-good-place#readme",
   "dependencies": {
     "@actions/core": "^1.2.4",
-    "@actions/github": "^4.0.0"
+    "@actions/github": "^4.0.0",
+    "encoding": "^0.1.13"
+  },
+  "devDependencies": {
+    "rolldown": "^1.0.0-beta.3"
   }
 }
